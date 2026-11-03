@@ -50,8 +50,9 @@ class QuoteCreate:
         self.landing_page.wait_for_landing_page()
 
     def create_quote(self, data):
-        """Complete the wizard, with bounded recovery, without sending email."""
+        """Complete recoverable form entry, then submit once as the final action."""
         self.recovery.run(self._recovery_steps(data))
+        self.send_quote_page.send_quote()
 
     def fill_send_quote(self, data):
         """Resume at Send Quote, repairing prerequisites if the form is blocked."""
@@ -77,7 +78,7 @@ class QuoteCreate:
             ("insurant", lambda: enter_form("insurant", lambda: self.insurant_page.enter_insurant_data(data["insurant"]))),
             ("product", lambda: enter_form("product", enter_product)),
             ("price_option", lambda: enter_form("price_option", lambda: self.price_option_page.select_price_option(data["priceOption"]))),
-            ("send_quote", lambda: enter_form("send_quote", lambda: self.send_quote_page.enter_quote_data(data["quote"]))),
+            ("send_quote", lambda: enter_form("send_quote", lambda: self.send_quote_page.enter_quote_data(data["quote"], submit=False))),
         )
         return [
             RecoveryStep(

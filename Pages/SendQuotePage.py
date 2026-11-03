@@ -22,7 +22,11 @@ class SendQuotePage:
         self.comments: Locator = page.locator("#Comments")
         self.previous_price_option: Locator = page.locator("#prevselectpriceoption")
         self.send: Locator = page.locator("#sendemail")
-        self.submission_message: Locator = page.locator(".sweet-alert h2")
+        self.submission_dialog: Locator = page.locator(".sweet-alert")
+        self.submission_message: Locator = self.submission_dialog.locator("h2")
+        self.submission_ok: Locator = self.submission_dialog.get_by_role(
+            "button", name="OK", exact=True
+        )
 
         self.vehicle_errors: Locator = page.locator("#entervehicledata .counter")
         self.insurant_errors: Locator = page.locator("#enterinsurantdata .counter")
@@ -63,12 +67,14 @@ class SendQuotePage:
         ):
             expect(errors).to_have_text("0")
 
-    def enter_quote_data(self, quotedata: dict) -> None:
-        """Fill and validate data from the record's quote object without sending.
+    def enter_quote_data(self, quotedata: dict, *, submit: bool = True) -> None:
+        """Fill and validate quote data, then submit and verify success.
 
         Required keys: email, username, password. Phone and comments are optional.
         confirmPassword defaults to password when no separate value is supplied.
         Optional fields are cleared when omitted, allowing reuse of the form.
+        Set submit=False when form entry is managed by a recovery workflow;
+        submit once after recovery finishes instead of retrying submission.
         """
         self.verify_ready()
         Utilities.set_text("E-Mail", self.email, quotedata["email"])
@@ -82,6 +88,8 @@ class SendQuotePage:
         )
         Utilities.set_text("Comments", self.comments, quotedata.get("comments") or "")
         expect(self.quote_errors).to_have_text("0")
+        if submit:
+            self.send_quote()
 
     def verify_quote_sent(self, timeout: float = 30000) -> None:
         """Wait for the success dialog after the application's delayed request."""
@@ -91,8 +99,10 @@ class SendQuotePage:
         )
 
     def send_quote(self) -> None:
-        """Submit the validated form and wait for the application's success dialog."""
+        """Submit, verify the success dialog, then click OK and wait for dismissal."""
         self.verify_ready()
         expect(self.quote_errors).to_have_text("0")
         Utilities.click("Send E-Mail", self.send)
         self.verify_quote_sent()
+        Utilities.click("Success dialog OK", self.submission_ok)
+        expect(self.submission_dialog).to_be_hidden()

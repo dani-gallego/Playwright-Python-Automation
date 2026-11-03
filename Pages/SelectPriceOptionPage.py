@@ -54,7 +54,7 @@ class SelectPriceOptionPage:
     def wait_for_price_options(self) -> None:
         """Wait for the real price table, which requires three valid forms."""
         expect(self.page).to_have_title("Select Price Option")
-        expect(self.price_plans).to_be_visible()
+        # The wrapper can have no layout box even while its table is rendered.
         expect(self.price_table).to_be_visible()
         for name, locator in self.price_option_map.items():
             expect(
