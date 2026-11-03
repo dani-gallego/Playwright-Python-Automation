@@ -29,6 +29,13 @@ def data():
     return {"vehicle": {}, "insurant": {}, "product": {}, "priceOption": "silver", "quote": {}}
 
 
+def test_preparing_quote_does_not_submit(workflow, data):
+    workflow.prepare_quote(data)
+
+    workflow.send_quote_page.enter_quote_data.assert_called_once_with(data["quote"], submit=False)
+    workflow.send_quote_page.send_quote.assert_not_called()
+
+
 def test_form_recovery_submits_once_after_success(workflow, data):
     workflow.send_quote_page.enter_quote_data.side_effect = [AssertionError("Not ready"), None]
 

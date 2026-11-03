@@ -22,19 +22,20 @@ $env:ACTION_DELAY = '0'
 
 | Command arguments after `run_tests.py` | What runs | Allure entries |
 | --- | --- | ---: |
-| No arguments, or `--runner all` | Four pytest tests and one Behave scenario | 5 |
-| `--runner pytest` | One quote test and three reporting checks | 4 |
+| No arguments, or `--runner all` | All pytest tests and Behave scenarios | Varies |
+| `--runner pytest` | Quote, recovery, submission, and reporting checks | Varies |
 | `--runner pytest -- -m smoke` | Only the pytest quote test | 1 |
 | `--runner pytest -- -m smoke --test-case TC001` | The pytest quote test with the specified JSON record | 1 |
-| `--runner behave` | The Behave quote scenario | 1 |
+| `--runner behave` | Quote submission and recovery scenarios | 2 |
 | `--runner behave -- --tags=@smoke` | Behave scenarios tagged smoke | 1 |
 
 Pytest executes [QuoteCreate.py](./E2E_Test/QuoteCreate.py); Behave executes
 [create_quote.feature](./Features/create_quote.feature), whose steps call the
 same quote workflow. Both fill vehicle, insurant, and product data, select the
-plan from `priceOption`, and verify arrival at Send Quote. Pytest also verifies
-retained input values and the selected plan. Running
-both frameworks exercises the workflow twice. Reporting checks live in
+plan from `priceOption`, fill `quote`, submit once, and verify the success message
+and its dismissal. Recovery scenarios fill without submitting. Pytest also
+verifies retained input values and the selected plan. Running both frameworks
+exercises the workflow twice. Reporting checks live in
 [test_allure_runner.py](./E2E_Test/test_allure_runner.py) and also appear in Allure.
 
 The `--` separator forwards options to the selected framework. Extra options

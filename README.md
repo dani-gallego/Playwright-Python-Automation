@@ -2,8 +2,10 @@
 
 Python Playwright automation for the Tricentis sample insurance application.
 The shared quote workflow fills vehicle, insurant, and product data, selects the
-plan from `priceOption`, and verifies arrival at **Send Quote**. Pytest also checks
-the retained input values and selected plan.
+plan from `priceOption`, and fills **Send Quote** from `quote`. It submits once
+after form recovery completes, verifies **Sending e-mail success!**, and dismisses
+the dialog with OK. Pytest also checks the retained input values and selected plan.
+Recovery scenarios use `prepare_quote` to fill the forms without submitting.
 
 ## Setup
 

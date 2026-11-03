@@ -29,6 +29,19 @@ def step_create_quote(context, test_case):
     context.quote_data = test_data
 
 
+@when('I fill a quote using test data "{test_case}" without submitting')
+def step_prepare_quote(context, test_case):
+    context.quote_data = TestDataReader.get_test_case_data(
+        str(PROJECT_PATHS.data / "CreateQuoteData.json"), test_case
+    )
+    context.quote_create.prepare_quote(context.quote_data)
+
+
+@then("the quote should be sent successfully")
+def step_verify_quote_sent(context):
+    context.quote_create.verify_quote_sent()
+
+
 @then("I should be navigated to the product data page")
 def step_verify_product_selection(context):
 
