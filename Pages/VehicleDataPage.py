@@ -70,7 +70,9 @@ class VehicleDataPage:
 
     def enter_vehicle_data(
         self,
-        data
+        data,
+        *,
+        navigate_from_landing: bool = True,
     ) -> None:
         """
         Navigate to Vehicle Data and enter the
@@ -81,10 +83,10 @@ class VehicleDataPage:
         # Navigate from Landing Page to Vehicle Data
         # -----------------------------------------------------
 
-        Utilities.click(
-            "Automobile Link",
-            self.automobile_link
-        )
+        if navigate_from_landing:
+            Utilities.click("Automobile Link", self.automobile_link)
+        else:
+            Utilities.click("Vehicle Data tab", self.vehicle_tab)
 
         # Vehicle controls are built by the destination's window.load handler.
         self.page.wait_for_load_state("load")
