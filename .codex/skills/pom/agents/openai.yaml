@@ -1,0 +1,7 @@
+interface:
+  display_name: "POM"
+  short_description: "Create Python Playwright page objects"
+  default_prompt: "Use $pom to create a page object for the requested application page, following this project's existing conventions."
+
+policy:
+  allow_implicit_invocation: true

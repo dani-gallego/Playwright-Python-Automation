@@ -1,0 +1,728 @@
+[
+  {
+    "testCase": "TC001",
+    "vehicle": {
+      "make": "BMW",
+      "enginePerformance": "150",
+      "dateOfManufacture": "9/15/1999",
+      "seats": "5",
+      "fuelType": "Diesel",
+      "price": "32000",
+      "license": "ABC-1234",
+      "mileage": "200"
+    },
+    "insurant": {
+      "firstName": "Juan",
+      "lastName": "Pedro",
+      "dateOfBirth": "4/27/1980",
+      "gender": "Male",
+      "streetAddress": "Test",
+      "country": "Philippines",
+      "zipCode": "12345",
+      "city": "Metro Manila",
+      "occupation": "Employee",
+      "hobbies": [
+        "Skydiving",
+        "Speeding"
+      ],
+      "website": "google.com",
+      "picture": "c:/tmp"
+    },
+    "product": {
+      "startDate": "1/1/2027",
+      "insuranceSum": "3.000.000,00",
+      "damageInsurance": "No Coverage",
+      "meritRating": "Super Bonus",
+      "optionalProducts": [
+        "Euro Protection",
+        "Legal Defense Insurance"
+      ],
+      "courtesyCar": "No"
+    },
+    "priceOption": "silver",
+    "quote": {
+      "email": "test@example.com",
+      "phone": "987654321",
+      "username": "TestOne",
+      "password": "Password123!",
+      "comments": "Training"
+    }
+  },
+  {
+    "testCase": "TC002",
+    "vehicle": {
+      "make": "Audi",
+      "enginePerformance": "180",
+      "dateOfManufacture": "3/22/2001",
+      "seats": "5",
+      "fuelType": "Petrol",
+      "price": "42000",
+      "license": "XYZ-5678",
+      "mileage": "15000"
+    },
+    "insurant": {
+      "firstName": "Maria",
+      "lastName": "Santos",
+      "dateOfBirth": "9/15/1999",
+      "gender": "Female",
+      "streetAddress": "Sample Street",
+      "country": "Philippines",
+      "zipCode": "1000",
+      "city": "Manila",
+      "occupation": "Employee",
+      "hobbies": [
+        "Bungee Jumping",
+        "Other"
+      ],
+      "website": "google.com",
+      "picture": "c:/tmp"
+    },
+    "product": {
+      "startDate": "2/15/2027",
+      "insuranceSum": "5.000.000,00",
+      "damageInsurance": "Full Coverage",
+      "meritRating": "Bonus",
+      "optionalProducts": [
+        "Euro Protection"
+      ],
+      "courtesyCar": "Yes"
+    },
+    "priceOption": "gold",
+    "quote": {
+      "email": "juan.pedro@example.com",
+      "phone": "912345678",
+      "username": "TestTwo",
+      "password": "JuanTest456!",
+      "comments": "Sample registration"
+    }
+  },
+  {
+    "testCase": "TC003",
+    "vehicle": {
+      "make": "Ford",
+      "enginePerformance": "110",
+      "dateOfManufacture": "7/10/1998",
+      "seats": "5",
+      "fuelType": "Petrol",
+      "price": "22000",
+      "license": "DEF-2468",
+      "mileage": "18000"
+    },
+    "insurant": {
+      "firstName": "Jose",
+      "lastName": "Reyes",
+      "dateOfBirth": "12/5/1995",
+      "gender": "Male",
+      "streetAddress": "Main Road",
+      "country": "Philippines",
+      "zipCode": "1100",
+      "city": "Quezon City",
+      "occupation": "Engineer",
+      "hobbies": [
+        "Cliff Diving",
+        "Skydiving"
+      ],
+      "website": "example.com",
+      "picture": "c:/data"
+    },
+    "product": {
+      "startDate": "3/10/2027",
+      "insuranceSum": "2.500.000,00",
+      "damageInsurance": "No Coverage",
+      "meritRating": "Malus",
+      "optionalProducts": [
+        "Legal Defense Insurance"
+      ],
+      "courtesyCar": "No"
+    },
+    "priceOption": "platinum",
+    "quote": {
+      "email": "maria.santos@example.com",
+      "phone": "923456789",
+      "username": "TestThree",
+      "password": "MariaTest789!",
+      "comments": "Second test user"
+    }
+  },
+  {
+    "testCase": "TC004",
+    "vehicle": {
+      "make": "Toyota",
+      "enginePerformance": "130",
+      "dateOfManufacture": "1/18/2002",
+      "seats": "5",
+      "fuelType": "Hybrid",
+      "price": "30000",
+      "license": "GHI-1357",
+      "mileage": "10000"
+    },
+    "insurant": {
+      "firstName": "Ana",
+      "lastName": "Cruz",
+      "dateOfBirth": "1/22/2000",
+      "gender": "Female",
+      "streetAddress": "Test Avenue",
+      "country": "Philippines",
+      "zipCode": "1200",
+      "city": "Makati",
+      "occupation": "Teacher",
+      "hobbies": [
+        "Speeding",
+        "Bungee Jumping",
+        "Cliff Diving"
+      ],
+      "website": "google.com",
+      "picture": "c:/temp"
+    },
+    "product": {
+      "startDate": "4/20/2027",
+      "insuranceSum": "7.500.000,00",
+      "damageInsurance": "Full Coverage",
+      "meritRating": "Super Bonus",
+      "optionalProducts": [
+        "Euro Protection",
+        "Legal Defense Insurance"
+      ],
+      "courtesyCar": "Yes"
+    },
+    "priceOption": "ultimate",
+    "quote": {
+      "email": "jose.reyes@example.com",
+      "phone": "934567890",
+      "username": "TestFour",
+      "password": "JoseTest321!",
+      "comments": "Valid registration"
+    }
+  },
+  {
+    "testCase": "TC005",
+    "vehicle": {
+      "make": "Mercedes",
+      "enginePerformance": "200",
+      "dateOfManufacture": "11/2/2000",
+      "seats": "5",
+      "fuelType": "Diesel",
+      "price": "48000",
+      "license": "JKL-8642",
+      "mileage": "14000"
+    },
+    "insurant": {
+      "firstName": "Mark",
+      "lastName": "Garcia",
+      "dateOfBirth": "6/10/1992",
+      "gender": "Male",
+      "streetAddress": "Park Lane",
+      "country": "Philippines",
+      "zipCode": "1300",
+      "city": "Pasig",
+      "occupation": "Developer",
+      "hobbies": [
+        "Skydiving",
+        "Other"
+      ],
+      "website": "example.com",
+      "picture": "c:/files"
+    },
+    "product": {
+      "startDate": "5/5/2027",
+      "insuranceSum": "1.000.000,00",
+      "damageInsurance": "Partial Coverage",
+      "meritRating": "Bonus",
+      "optionalProducts": [],
+      "courtesyCar": "No"
+    },
+    "priceOption": "silver",
+    "quote": {
+      "email": "ana.cruz@example.com",
+      "phone": "945678901",
+      "username": "TestFive",
+      "password": "AnaTest654!",
+      "comments": "Registration test"
+    }
+  },
+  {
+    "testCase": "TC006",
+    "vehicle": {
+      "make": "Volkswagen",
+      "enginePerformance": "125",
+      "dateOfManufacture": "7/29/1997",
+      "seats": "5",
+      "fuelType": "Petrol",
+      "price": "19500",
+      "license": "MNO-9753",
+      "mileage": "20000"
+    },
+    "insurant": {
+      "firstName": "Sofia",
+      "lastName": "Mendoza",
+      "dateOfBirth": "11/30/1998",
+      "gender": "Female",
+      "streetAddress": "Sunrise Street",
+      "country": "Philippines",
+      "zipCode": "1400",
+      "city": "Taguig",
+      "occupation": "Designer",
+      "hobbies": [
+        "Bungee Jumping",
+        "Cliff Diving"
+      ],
+      "website": "google.com",
+      "picture": "c:/work"
+    },
+    "product": {
+      "startDate": "6/12/2027",
+      "insuranceSum": "4.000.000,00",
+      "damageInsurance": "Full Coverage",
+      "meritRating": "Malus",
+      "optionalProducts": [
+        "Euro Protection"
+      ],
+      "courtesyCar": "Yes"
+    },
+    "priceOption": "platinum",
+    "quote": {
+      "email": "mark.garcia@example.com",
+      "phone": "956789012",
+      "username": "TestSix",
+      "password": "MarkTest987!",
+      "comments": "Automation testing"
+    }
+  },
+  {
+    "testCase": "TC007",
+    "vehicle": {
+      "make": "Honda",
+      "enginePerformance": "95",
+      "dateOfManufacture": "4/12/2003",
+      "seats": "5",
+      "fuelType": "Petrol",
+      "price": "18000",
+      "license": "PQR-3579",
+      "mileage": "8000"
+    },
+    "insurant": {
+      "firstName": "Daniel",
+      "lastName": "Flores",
+      "dateOfBirth": "3/8/1988",
+      "gender": "Male",
+      "streetAddress": "Green Road",
+      "country": "Philippines",
+      "zipCode": "1500",
+      "city": "Pasay",
+      "occupation": "Analyst",
+      "hobbies": [
+        "Speeding",
+        "Other"
+      ],
+      "website": "example.com",
+      "picture": "c:/logs"
+    },
+    "product": {
+      "startDate": "7/1/2027",
+      "insuranceSum": "3.500.000,00",
+      "damageInsurance": "Partial Coverage",
+      "meritRating": "Super Bonus",
+      "optionalProducts": [
+        "Legal Defense Insurance"
+      ],
+      "courtesyCar": "No"
+    },
+    "priceOption": "gold",
+    "quote": {
+      "email": "sofia.mendoza@example.com",
+      "phone": "967890123",
+      "username": "TestSeven",
+      "password": "SofiaTest234!",
+      "comments": "Playwright practice"
+    }
+  },
+  {
+    "testCase": "TC008",
+    "vehicle": {
+      "make": "Volvo",
+      "enginePerformance": "170",
+      "dateOfManufacture": "2/6/2001",
+      "seats": "5",
+      "fuelType": "Diesel",
+      "price": "39000",
+      "license": "STU-4680",
+      "mileage": "11000"
+    },
+    "insurant": {
+      "firstName": "Isabella",
+      "lastName": "Ramos",
+      "dateOfBirth": "7/19/2001",
+      "gender": "Female",
+      "streetAddress": "Blue Street",
+      "country": "Philippines",
+      "zipCode": "1600",
+      "city": "Mandaluyong",
+      "occupation": "Student",
+      "hobbies": [
+        "Skydiving",
+        "Bungee Jumping"
+      ],
+      "website": "google.com",
+      "picture": "c:/test"
+    },
+    "product": {
+      "startDate": "8/18/2027",
+      "insuranceSum": "6.000.000,00",
+      "damageInsurance": "No Coverage",
+      "meritRating": "Bonus",
+      "optionalProducts": [
+        "Euro Protection",
+        "Legal Defense Insurance"
+      ],
+      "courtesyCar": "Yes"
+    },
+    "priceOption": "ultimate",
+    "quote": {
+      "email": "daniel.flores@example.com",
+      "phone": "978901234",
+      "username": "TestEight",
+      "password": "DanielTest567!",
+      "comments": "Form validation"
+    }
+  },
+  {
+    "testCase": "TC009",
+    "vehicle": {
+      "make": "Peugeot",
+      "enginePerformance": "100",
+      "dateOfManufacture": "9/17/1998",
+      "seats": "4",
+      "fuelType": "Petrol",
+      "price": "21000",
+      "license": "VWX-5791",
+      "mileage": "16000"
+    },
+    "insurant": {
+      "firstName": "Miguel",
+      "lastName": "Torres",
+      "dateOfBirth": "2/14/1997",
+      "gender": "Male",
+      "streetAddress": "Central Avenue",
+      "country": "Philippines",
+      "zipCode": "1700",
+      "city": "Marikina",
+      "occupation": "Technician",
+      "hobbies": [
+        "Cliff Diving",
+        "Speeding"
+      ],
+      "website": "example.com",
+      "picture": "c:/output"
+    },
+    "product": {
+      "startDate": "9/25/2027",
+      "insuranceSum": "2.000.000,00",
+      "damageInsurance": "Full Coverage",
+      "meritRating": "Malus",
+      "optionalProducts": [],
+      "courtesyCar": "No"
+    },
+    "priceOption": null,
+    "quote": {
+      "email": "isabella.ramos@example.com",
+      "phone": "989012345",
+      "username": "TestNine",
+      "password": "IsabellaTest890!",
+      "comments": "Test scenario"
+    }
+  },
+  {
+    "testCase": "TC010",
+    "vehicle": {
+      "make": "Skoda",
+      "enginePerformance": "140",
+      "dateOfManufacture": "6/25/2002",
+      "seats": "5",
+      "fuelType": "Diesel",
+      "price": "27500",
+      "license": "YZA-6802",
+      "mileage": "9000"
+    },
+    "insurant": {
+      "firstName": "Camille",
+      "lastName": "Aquino",
+      "dateOfBirth": "5/25/1994",
+      "gender": "Female",
+      "streetAddress": "West Road",
+      "country": "Philippines",
+      "zipCode": "1800",
+      "city": "Paranaque",
+      "occupation": "Accountant",
+      "hobbies": [
+        "Speeding",
+        "Bungee Jumping",
+        "Cliff Diving",
+        "Skydiving",
+        "Other"
+      ],
+      "website": "google.com",
+      "picture": "c:/backup"
+    },
+    "product": {
+      "startDate": "10/10/2027",
+      "insuranceSum": "8.000.000,00",
+      "damageInsurance": "Partial Coverage",
+      "meritRating": "Super Bonus",
+      "optionalProducts": [
+        "Euro Protection"
+      ],
+      "courtesyCar": "Yes"
+    },
+    "priceOption": null,
+    "quote": {
+      "email": "miguel.torres@example.com",
+      "phone": "990123456",
+      "username": "TestTen",
+      "password": "MiguelTest432!",
+      "comments": "Training data"
+    }
+  },
+  {
+    "testCase": "TC011",
+    "vehicle": {
+      "make": "Mazda",
+      "enginePerformance": "120",
+      "dateOfManufacture": "12/8/1999",
+      "seats": "5",
+      "fuelType": "Petrol",
+      "price": "24500",
+      "license": "BCD-7913",
+      "mileage": "13000"
+    },
+    "insurant": {
+      "firstName": "Andrea",
+      "lastName": "Lim",
+      "dateOfBirth": "8/12/1996",
+      "gender": "Female",
+      "streetAddress": "Maple Street",
+      "country": "Philippines",
+      "zipCode": "1900",
+      "city": "Antipolo",
+      "occupation": "Employee",
+      "hobbies": [
+        "Skydiving",
+        "Cliff Diving"
+      ],
+      "website": "example.com",
+      "picture": "c:/pictures"
+    },
+    "product": {
+      "startDate": "11/15/2027",
+      "insuranceSum": "3.000.000,00",
+      "damageInsurance": "Full Coverage",
+      "meritRating": "Super Bonus",
+      "optionalProducts": [
+        "Euro Protection",
+        "Legal Defense Insurance"
+      ],
+      "courtesyCar": "Yes"
+    },
+    "priceOption": "gold",
+    "quote": {
+      "email": "andrea.lim@example.com",
+      "phone": "911234567",
+      "username": "TestEleven",
+      "password": "AndreaTest123!",
+      "comments": "Automated registration"
+    }
+  },
+  {
+    "testCase": "TC012",
+    "vehicle": {
+      "make": "Kia",
+      "enginePerformance": "105",
+      "dateOfManufacture": "2/14/2003",
+      "seats": "5",
+      "fuelType": "Hybrid",
+      "price": "23500",
+      "license": "EFG-8024",
+      "mileage": "7000"
+    },
+    "insurant": {
+      "firstName": "Patrick",
+      "lastName": "Villanueva",
+      "dateOfBirth": "3/21/1993",
+      "gender": "Male",
+      "streetAddress": "Oak Avenue",
+      "country": "Philippines",
+      "zipCode": "2000",
+      "city": "San Fernando",
+      "occupation": "Employee",
+      "hobbies": [
+        "Speeding",
+        "Bungee Jumping"
+      ],
+      "website": "google.com",
+      "picture": "c:/images"
+    },
+    "product": {
+      "startDate": "12/10/2027",
+      "insuranceSum": "5.000.000,00",
+      "damageInsurance": "No Coverage",
+      "meritRating": "Bonus",
+      "optionalProducts": [
+        "Euro Protection"
+      ],
+      "courtesyCar": "No"
+    },
+    "priceOption": "silver",
+    "quote": {
+      "email": "patrick.villanueva@example.com",
+      "phone": "922345678",
+      "username": "TestTwelve",
+      "password": "PatrickTest456!",
+      "comments": "Insurance test data"
+    }
+  },
+  {
+    "testCase": "TC013",
+    "vehicle": {
+      "make": "Hyundai",
+      "enginePerformance": "115",
+      "dateOfManufacture": "10/31/1997",
+      "seats": "5",
+      "fuelType": "Petrol",
+      "price": "20500",
+      "license": "HIJ-9135",
+      "mileage": "22000"
+    },
+    "insurant": {
+      "firstName": "Nicole",
+      "lastName": "Bautista",
+      "dateOfBirth": "6/17/1998",
+      "gender": "Female",
+      "streetAddress": "Pine Road",
+      "country": "Philippines",
+      "zipCode": "2100",
+      "city": "Balanga",
+      "occupation": "Employee",
+      "hobbies": [
+        "Cliff Diving",
+        "Other"
+      ],
+      "website": "example.com",
+      "picture": "c:/uploads"
+    },
+    "product": {
+      "startDate": "1/20/2028",
+      "insuranceSum": "2.500.000,00",
+      "damageInsurance": "Partial Coverage",
+      "meritRating": "Malus",
+      "optionalProducts": [
+        "Legal Defense Insurance"
+      ],
+      "courtesyCar": "Yes"
+    },
+    "priceOption": "platinum",
+    "quote": {
+      "email": "nicole.bautista@example.com",
+      "phone": "933456789",
+      "username": "TestThirteen",
+      "password": "NicoleTest789!",
+      "comments": "End to end testing"
+    }
+  },
+  {
+    "testCase": "TC014",
+    "vehicle": {
+      "make": "Nissan",
+      "enginePerformance": "160",
+      "dateOfManufacture": "5/3/2001",
+      "seats": "7",
+      "fuelType": "Diesel",
+      "price": "32000",
+      "license": "KLM-0246",
+      "mileage": "12500"
+    },
+    "insurant": {
+      "firstName": "Rafael",
+      "lastName": "Navarro",
+      "dateOfBirth": "10/5/1990",
+      "gender": "Male",
+      "streetAddress": "Cedar Lane",
+      "country": "Philippines",
+      "zipCode": "2200",
+      "city": "Olongapo",
+      "occupation": "Employee",
+      "hobbies": [
+        "Skydiving",
+        "Speeding",
+        "Other"
+      ],
+      "website": "google.com",
+      "picture": "c:/files"
+    },
+    "product": {
+      "startDate": "2/14/2028",
+      "insuranceSum": "7.500.000,00",
+      "damageInsurance": "Full Coverage",
+      "meritRating": "Super Bonus",
+      "optionalProducts": [
+        "Euro Protection",
+        "Legal Defense Insurance"
+      ],
+      "courtesyCar": "Yes"
+    },
+    "priceOption": "ultimate",
+    "quote": {
+      "email": "rafael.navarro@example.com",
+      "phone": "944567890",
+      "username": "TestFourteen",
+      "password": "RafaelTest321!",
+      "comments": "Complete insurance flow"
+    }
+  },
+  {
+    "testCase": "TC015",
+    "vehicle": {
+      "make": "Renault",
+      "enginePerformance": "90",
+      "dateOfManufacture": "1/21/1998",
+      "seats": "4",
+      "fuelType": "Petrol",
+      "price": "17500",
+      "license": "NOP-1358",
+      "mileage": "17500"
+    },
+    "insurant": {
+      "firstName": "Bianca",
+      "lastName": "Castillo",
+      "dateOfBirth": "4/9/2000",
+      "gender": "Female",
+      "streetAddress": "Birch Street",
+      "country": "Philippines",
+      "zipCode": "2300",
+      "city": "Tarlac City",
+      "occupation": "Employee",
+      "hobbies": [
+        "Bungee Jumping",
+        "Skydiving"
+      ],
+      "website": "example.com",
+      "picture": "c:/photos"
+    },
+    "product": {
+      "startDate": "3/25/2028",
+      "insuranceSum": "1.000.000,00",
+      "damageInsurance": "No Coverage",
+      "meritRating": "Bonus",
+      "optionalProducts": [
+        "Euro Protection"
+      ],
+      "courtesyCar": "No"
+    },
+    "priceOption": "silver",
+    "quote": {
+      "email": "bianca.castillo@example.com",
+      "phone": "955678901",
+      "username": "TestFifteen",
+      "password": "BiancaTest654!",
+      "comments": "Regression testing"
+    }
+  }
+]
