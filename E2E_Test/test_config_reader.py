@@ -32,7 +32,7 @@ class ConfigReaderTests(unittest.TestCase):
     def test_ci_configuration_does_not_require_a_dotenv_file(self):
         os.environ.update(
             TEST_ENV="demoweb", ENVIRONMENT="demoweb",
-            BASE_URL="https://example.invalid/", USERNAME="test@example.invalid",
+            DEMO_BASE_URL="https://example.invalid/", USERNAME="test@example.invalid",
             PASSWORD="test-only-placeholder",
         )
         config = EnvironmentConfig()
