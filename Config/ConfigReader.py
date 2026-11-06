@@ -23,12 +23,9 @@ class ConfigReader:
             / f".env.{environment}"
         )
 
-        if not env_file.exists():
-            raise FileNotFoundError(
-                f"Environment file not found: {env_file}"
-            )
-
-        load_dotenv(env_file)
+        # CI injects settings directly; local dotenv files are optional.
+        if env_file.is_file():
+            load_dotenv(env_file)
 
         cls._loaded = True
 
