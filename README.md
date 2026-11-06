@@ -15,7 +15,7 @@ python -m venv .venv
 ./.venv/Scripts/python.exe -m playwright install chromium
 ```
 
-Configuration is read from `Config/environments/.env.<TEST_ENV>`; `TEST_ENV`
+Local configuration is read from optional `Config/environments/.env.<TEST_ENV>`; `TEST_ENV`
 defaults to `sit`. Keep local environment files private. Set `BASE_URL` and
 `ENVIRONMENT` for the target application. Process variables override file values.
 The browser defaults to Chromium; set `HEADLESS=true` for headless execution.
@@ -23,6 +23,35 @@ The browser defaults to Chromium; set `HEADLESS=true` for headless execution.
 explicit assertions for application readiness. Set a positive delay only when
 you want slower demonstration runs. [WaitUtility.py](./Utility/WaitUtility.py)
 provides the shared fixed-delay implementation used by UI actions.
+
+## GitHub Actions secrets
+
+In the repository's **Settings > Secrets and variables > Actions**, add these
+repository secrets using **New repository secret**:
+
+| Secret | Value |
+| --- | --- |
+| `DEMOWEB_USERNAME` | Your dedicated Demo Web Shop account email |
+| `DEMOWEB_PASSWORD` | That account's password |
+
+Store each value separately. Do not put credentials in Git ignore rules, workflow
+YAML, test data, or command-line arguments. GitHub's
+[secret setup instructions](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets)
+describe the repository secret store.
+
+After publishing [the workflow](./.github/workflows/demoweb-secrets.yml) to the
+default branch, open **Actions > Verify Demo Web Shop secrets > Run workflow**.
+The workflow injects the secrets as `USERNAME` and `PASSWORD` only in the step
+that needs them. It supplies the public URL as ordinary configuration and does
+not create a dotenv file or upload artifacts containing credentials.
+
+This manual workflow verifies configuration availability. It does not log in
+or run the vehicle insurance scenarios against Demo Web Shop. Test jobs that
+need the same credentials can reuse the step's `env` mapping.
+
+CI can run entirely from environment variables. Missing required settings raise
+an error naming the setting, without including its value. Local dotenv files
+continue to work, and injected environment variables take precedence.
 
 ## Run tests
 
@@ -67,9 +96,20 @@ The reporting wrapper requires the Allure CLI. See [ALLURE.md](./ALLURE.md).
 | [Utility](./Utility/) | UI helpers, browser lifecycle, logging, data, and reporting |
 | [E2E_Test](./E2E_Test/) | Pytest quote scenario, fixtures, and reporting regression checks |
 | [Features](./Features/) | Behave scenarios, steps, and lifecycle hooks |
-| [.codex/skills](./.codex/skills/) | Project-specific agent guidance |
+| [Agent](./Agent/) | Optional GPT/agentic automation components and project skills |
 
 Screenshots, traces, raw Allure results, and HTML are generated under `Reports/`;
 logs are generated under `Logs/`. They can be deleted between runs and are
 ignored by Git. The dependency file pins direct dependencies; pip resolves their
 transitive dependencies. It is not a complete environment lockfile.
+
+## Optional agent capabilities
+
+[Agent/README.md](./Agent/README.md) describes the candidate AI capabilities,
+approval requirements, and boundaries between generated content, test execution,
+and reporting. Project skills live in [Agent/skills](./Agent/skills/).
+
+For this phase, the optional folder and guidance are sufficient. Stabilize the
+core framework first, then agree on the required AI capabilities and approve the
+design before adding selected dependencies. Do not install AI dependencies merely
+because they appear in a framework checklist.
