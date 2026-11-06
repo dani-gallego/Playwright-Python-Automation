@@ -105,4 +105,9 @@ class SendQuotePage:
         Utilities.click("Send E-Mail", self.send)
         self.verify_quote_sent()
         Utilities.click("Success dialog OK", self.submission_ok)
+        self.verify_submission_complete()
+
+    def verify_submission_complete(self) -> None:
+        """Verify the acknowledged success message retained in the hidden dialog."""
+        expect(self.submission_message).to_have_text("Sending e-mail success!")
         expect(self.submission_dialog).to_be_hidden()

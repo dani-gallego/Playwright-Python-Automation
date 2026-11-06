@@ -51,8 +51,12 @@ class QuoteCreate:
 
     def create_quote(self, data):
         """Complete recoverable form entry, then submit once as the final action."""
-        self.recovery.run(self._recovery_steps(data))
+        self.prepare_quote(data)
         self.send_quote_page.send_quote()
+
+    def prepare_quote(self, data):
+        """Fill all forms from the selected record without submitting the quote."""
+        self.recovery.run(self._recovery_steps(data))
 
     def fill_send_quote(self, data):
         """Resume at Send Quote, repairing prerequisites if the form is blocked."""
@@ -99,6 +103,9 @@ class QuoteCreate:
     def verify_send_quote(self):
         self.send_quote_page.verify_ready()
 
+    def verify_quote_sent(self):
+        self.send_quote_page.verify_submission_complete()
+
     def verify_quote_data(self, data):
         self.verify_send_quote()
         quote = data["quote"]
@@ -116,17 +123,17 @@ class QuoteCreate:
 
 @pytest.mark.smoke
 @allure.feature("Vehicle insurance")
-@allure.story("Fill Send Quote and recover invalid prerequisites")
-def test_quote_reaches_send_quote(page, environment_config, quote_data):
-    """Complete the forms, select the plan, and verify arrival and retained choices."""
+@allure.story("Submit the quote and acknowledge successful delivery")
+def test_quote_is_sent_successfully(page, environment_config, quote_data):
+    """Submit the selected record and verify success and retained choices."""
     data = quote_data
-    allure.dynamic.title(f"Reach Send Quote using {data['testCase']}")
+    allure.dynamic.title(f"Send quote successfully using {data['testCase']}")
     allure.dynamic.parameter("test_case", data["testCase"])
 
     quote = QuoteCreate(page)
     quote.open_application(environment_config.base_url)
     quote.create_quote(data)
-    quote.verify_send_quote()
+    quote.verify_quote_sent()
     quote.verify_quote_data(data)
 
     selected_plan = data["priceOption"].strip().lower()
@@ -174,7 +181,7 @@ def test_quote_recovers_missing_required_field(page, environment_config, quote_d
     """Diagnose a cleared prerequisite and restore it using the selected record."""
     quote = QuoteCreate(page)
     quote.open_application(environment_config.base_url)
-    quote.create_quote(quote_data)
+    quote.prepare_quote(quote_data)
     form = quote.form_pages["vehicle"]
     form.open()
     missing_field = form.clear_required_field()
